@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="Journal Process" version="121">
+  <gspn name="PT" view-rates="false" zoom="75">
+    <nodes>
+      <place label-y="-2.0" marking="1" name="Submission" x="21.0" y="17.0"/>
+      <place label-x="5.5" label-y="0.0" name="ReceivedByReviewers" x="30.0" y="45.0"/>
+      <transition label-y="-2.0" name="cannotReview" nservers-x="0.5" type="EXP" x="35.55" y="40.0"/>
+      <transition label-x="3.0" label-y="0.0" name="canReview" nservers-x="0.5" type="EXP" x="35.55" y="50.0"/>
+      <place name="NewReviewerSelection" x="41.0" y="40.0"/>
+      <transition label-x="5.0" label-y="0.0" name="suggestNewReviewer" nservers-x="0.5" type="EXP" x="47.55" y="40.0"/>
+      <transition label-x="4.0" label-y="0.0" name="chooseReviwers" nservers-x="0.5" type="EXP" x="27.55" y="31.0"/>
+      <place label-y="-2.0" name="ReviewrsChosen" x="18.0" y="45.0"/>
+      <transition label-x="3.5" label-y="0.0" name="anonymize" nservers-x="0.5" type="EXP" x="18.55" y="50.0"/>
+      <place name="AnonymizedPaper" x="18.0" y="66.0"/>
+      <transition label-y="-2.0" name="sendForCapabilityCheck" nservers-x="0.5" type="EXP" x="24.55" y="66.0"/>
+      <place label-x="0.5" label-y="2.0" name="ReadyForReview" x="35.0" y="66.0"/>
+      <transition label-y="2.0" name="rejectPaper" nservers-x="0.5" type="EXP" x="15.55" y="26.0"/>
+      <place label-y="-2.0" name="Rejected" x="4.0" y="14.0"/>
+      <transition label-y="2.0" name="acceptPaper" nservers-x="0.5" type="EXP" x="21.55" y="26.0"/>
+      <place label-x="5.0" label-y="-1.5" name="ReviewerSelection" x="27.0" y="26.0"/>
+      <place name="OutcomeCalculated" x="54.0" y="66.0"/>
+      <transition label-y="-2.0" name="review" nservers-x="0.5" type="EXP" x="44.55" y="66.0"/>
+      <place label-x="4.0" label-y="2.0" name="ChangesRequired" x="56.0" y="14.0"/>
+      <transition label-x="4.0" label-y="0.0" name="changeRequest" nservers-x="0.5" type="EXP" x="56.55" y="59.0"/>
+      <transition name="doNotRebutt" nservers-x="0.5" type="EXP" x="42.55" y="14.0"/>
+      <transition name="rebutt" nservers-x="0.5" type="EXP" x="42.55" y="18.0"/>
+      <transition name="implementChanges" nservers-x="0.5" type="EXP" x="61.55" y="14.0"/>
+      <place label-x="5.0" label-y="0.0" name="UpdatedPaper" x="67.0" y="14.0"/>
+      <place label-y="2.0" name="PaperReceived" x="67.0" y="66.0"/>
+      <transition label-x="3.0" label-y="0.0" name="reSubmit" nservers-x="0.5" type="EXP" x="67.55" y="18.0"/>
+      <transition label-y="-2.0" name="createDiff" nservers-x="0.5" type="EXP" x="72.55" y="66.0"/>
+      <place label-y="2.0" name="PaperWithHighlighteChanges" x="80.0" y="66.0"/>
+      <transition label-x="-6.0" label-y="0.0" name="submitForFinalApproval" nservers-x="0.5" type="EXP" x="80.55" y="60.0"/>
+      <place label-x="-4.0" label-y="-1.5" name="FinalApproval" x="84.0" y="45.0"/>
+      <transition label-x="5.0" label-y="0.0" name="rejectFinalApproval" nservers-x="0.5" type="EXP" x="88.55" y="40.0"/>
+      <transition label-x="5.0" label-y="0.0" name="acceptFinalApproval" nservers-x="0.5" type="EXP" x="88.55" y="50.0"/>
+      <place label-y="2.0" name="readyForFinalization" x="92.0" y="66.0"/>
+      <transition label-y="-2.0" name="deanonymize" nservers-x="0.5" type="EXP" x="97.55" y="66.0"/>
+      <place label-y="2.0" name="Deanonymized" x="102.0" y="66.0"/>
+      <transition label-y="-2.0" name="assemblePDF" nservers-x="0.5" type="EXP" x="107.55" y="66.0"/>
+      <place label-y="2.0" name="AssembledPDF" x="112.0" y="66.0"/>
+      <place label-y="2.0" name="Publication" x="123.0" y="66.0"/>
+      <transition label-y="-2.0" name="generateDOI" nservers-x="0.5" type="EXP" x="117.55" y="66.0"/>
+      <transition label-x="3.0" label-y="0.0" name="superReject" nservers-x="0.5" type="EXP" x="98.55" y="45.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="16.5" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.5" x="11.5" y="5.75">Author</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="14.0" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="117.5" x="11.5" y="57.0">Robotz</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="11.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="27.5" x="11.25" y="23.5">Committee</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="19.5" name="__textBox3" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="98.0" x="11.5" y="35.5">Reviewer</text-box>
+      <transition name="giveUp" nservers-x="0.5" type="EXP" x="42.55" y="10.0"/>
+      <place label-y="2.0" name="PaperRejected" x="51.0" y="14.0"/>
+      <transition label-x="-5.0" label-y="0.0" name="rejectionNotification" nservers-x="0.5" type="EXP" x="51.55" y="59.0"/>
+      <transition name="giveUp2" nservers-x="0.5" type="EXP" x="46.55" y="8.0"/>
+    </nodes>
+    <edges>
+      <arc head="canReview" kind="INPUT" tail="ReceivedByReviewers"/>
+      <arc head="cannotReview" kind="INPUT" tail="ReceivedByReviewers"/>
+      <arc head="NewReviewerSelection" kind="OUTPUT" tail="cannotReview"/>
+      <arc head="suggestNewReviewer" kind="INPUT" tail="NewReviewerSelection"/>
+      <arc head="anonymize" kind="INPUT" tail="ReviewrsChosen"/>
+      <arc head="AnonymizedPaper" kind="OUTPUT" tail="anonymize"/>
+      <arc head="sendForCapabilityCheck" kind="INPUT" tail="AnonymizedPaper"/>
+      <arc head="ReceivedByReviewers" kind="OUTPUT" mult-k="1.1194335937499997" tail="sendForCapabilityCheck">
+        <point x="31.0" y="67.0"/>
+      </arc>
+      <arc head="ReadyForReview" kind="OUTPUT" tail="canReview"/>
+      <arc head="rejectPaper" kind="INPUT" mult-k="0.6334960937500002" tail="Submission">
+        <point x="16.0" y="18.0"/>
+      </arc>
+      <arc head="Rejected" kind="OUTPUT" mult-k="1.3622070312499996" tail="rejectPaper">
+        <point x="5.0" y="27.0"/>
+      </arc>
+      <arc head="acceptPaper" kind="INPUT" tail="Submission"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" tail="acceptPaper"/>
+      <arc head="chooseReviwers" kind="INPUT" tail="ReviewerSelection"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" mult-k="0.8366210937500002" tail="suggestNewReviewer">
+        <point x="48.0" y="27.0"/>
+      </arc>
+      <arc head="ReviewrsChosen" kind="OUTPUT" mult-k="1.1852539062499998" tail="chooseReviwers">
+        <point x="28.0" y="46.0"/>
+      </arc>
+      <arc head="review" kind="INPUT" tail="ReadyForReview"/>
+      <arc head="OutcomeCalculated" kind="OUTPUT" tail="review"/>
+      <arc head="changeRequest" kind="INPUT" tail="OutcomeCalculated"/>
+      <arc head="Rejected" kind="OUTPUT" tail="doNotRebutt"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" mult-k="1.1643554687500002" tail="rebutt">
+        <point x="28.0" y="19.0"/>
+      </arc>
+      <arc head="implementChanges" kind="INPUT" tail="ChangesRequired"/>
+      <arc head="UpdatedPaper" kind="OUTPUT" tail="implementChanges"/>
+      <arc head="reSubmit" kind="INPUT" tail="UpdatedPaper"/>
+      <arc head="PaperReceived" kind="OUTPUT" tail="reSubmit"/>
+      <arc head="createDiff" kind="INPUT" tail="PaperReceived"/>
+      <arc head="PaperWithHighlighteChanges" kind="OUTPUT" tail="createDiff"/>
+      <arc head="submitForFinalApproval" kind="INPUT" tail="PaperWithHighlighteChanges"/>
+      <arc head="FinalApproval" kind="OUTPUT" tail="submitForFinalApproval">
+        <point x="81.0" y="46.0"/>
+      </arc>
+      <arc head="rejectFinalApproval" kind="INPUT" tail="FinalApproval"/>
+      <arc head="ChangesRequired" kind="OUTPUT" mult-k="1.6588867187499998" tail="rejectFinalApproval">
+        <point x="89.0" y="9.5"/>
+        <point x="57.0" y="9.5"/>
+      </arc>
+      <arc head="acceptFinalApproval" kind="INPUT" tail="FinalApproval"/>
+      <arc head="deanonymize" kind="INPUT" tail="readyForFinalization"/>
+      <arc head="readyForFinalization" kind="OUTPUT" mult-k="1.22275390625" tail="acceptFinalApproval">
+        <point x="89.0" y="67.0"/>
+      </arc>
+      <arc head="Deanonymized" kind="OUTPUT" tail="deanonymize"/>
+      <arc head="generateDOI" kind="INPUT" tail="AssembledPDF"/>
+      <arc head="Publication" kind="OUTPUT" tail="generateDOI"/>
+      <arc head="AssembledPDF" kind="OUTPUT" tail="assemblePDF"/>
+      <arc head="assemblePDF" kind="INPUT" tail="Deanonymized"/>
+      <arc head="ChangesRequired" kind="OUTPUT" tail="changeRequest"/>
+      <arc head="superReject" kind="INPUT" tail="FinalApproval"/>
+      <arc head="Rejected" kind="OUTPUT" tail="superReject">
+        <point x="99.0" y="7.5"/>
+        <point x="5.0" y="7.5"/>
+      </arc>
+      <arc head="Rejected" kind="OUTPUT" tail="giveUp">
+        <point x="9.5" y="11.0"/>
+      </arc>
+      <arc head="rejectionNotification" kind="INPUT" tail="OutcomeCalculated"/>
+      <arc head="PaperRejected" kind="OUTPUT" tail="rejectionNotification"/>
+      <arc head="doNotRebutt" kind="INPUT" tail="PaperRejected"/>
+      <arc head="rebutt" kind="INPUT" tail="PaperRejected"/>
+      <arc head="giveUp" kind="INPUT" tail="PaperRejected"/>
+      <arc head="giveUp2" kind="INPUT" tail="ChangesRequired"/>
+      <arc head="Rejected" kind="OUTPUT" tail="giveUp2">
+        <point x="8.0" y="9.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <measures gspn-name="PT" name="Measures" simplified-UI="false">
+    <assignments/>
+    <greatspn/>
+    <formulas>
+      <formula comment="Basic statistics of the toolchain execution." language="STAT"/>
+    </formulas>
+  </measures>
+</project>
