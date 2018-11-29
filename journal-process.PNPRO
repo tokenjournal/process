@@ -16,7 +16,7 @@
       <place name="OutcomeCalculated" x="66.0" y="74.0"/>
       <place label-x="4.0" label-y="2.0" name="ChangesRequired" x="66.0" y="16.0"/>
       <transition label-x="4.0" label-y="0.0" name="changeRequest" nservers-x="0.5" type="EXP" x="69.55" y="48.0"/>
-      <transition name="doNotRebutt" nservers-x="0.5" type="EXP" x="49.55" y="14.0"/>
+      <transition name="doNotRebut" nservers-x="0.5" type="EXP" x="49.55" y="14.0"/>
       <transition name="rebutt" nservers-x="0.5" type="EXP" x="47.55" y="20.0"/>
       <transition name="implementChanges" nservers-x="0.5" type="EXP" x="72.55" y="16.0"/>
       <place label-y="-2.0" name="UpdatedPaper" x="80.0" y="16.0"/>
@@ -91,7 +91,7 @@
         <point x="17.0" y="11.0"/>
       </arc>
       <arc head="PaperRejected" kind="OUTPUT" tail="rejectionNotification"/>
-      <arc head="doNotRebutt" kind="INPUT" tail="PaperRejected"/>
+      <arc head="doNotRebut" kind="INPUT" tail="PaperRejected"/>
       <arc head="rebutt" kind="INPUT" mult-k="0.94521484375" tail="PaperRejected">
         <point x="56.0" y="21.0"/>
       </arc>
@@ -148,7 +148,7 @@
         <point x="70.0" y="28.0"/>
         <point x="67.0" y="28.0"/>
       </arc>
-      <arc head="Rejected" kind="OUTPUT" tail="doNotRebutt">
+      <arc head="Rejected" kind="OUTPUT" tail="doNotRebut">
         <point x="17.5" y="15.0"/>
       </arc>
       <arc head="newReviewers" kind="INPUT" tail="rebuttalEvaluated">
@@ -177,7 +177,7 @@
       <transition label-y="2.0" name="acceptPaper" nservers-x="0.5" type="EXP" x="23.55" y="28.0"/>
       <place label-x="5.0" label-y="-1.5" name="ReviewerSelection" x="29.0" y="28.0"/>
       <place name="OutcomeCalculated" x="55.0" y="68.0"/>
-      <transition name="doNotRebutt" nservers-x="0.5" type="EXP" x="44.55" y="16.0"/>
+      <transition name="doNotRebut" nservers-x="0.5" type="EXP" x="44.55" y="16.0"/>
       <transition name="rebutt" nservers-x="0.5" type="EXP" x="44.55" y="20.0"/>
       <place label-y="2.0" name="readyForFinalization" x="68.0" y="68.0"/>
       <transition label-y="-2.0" name="deanonymize" nservers-x="0.5" type="EXP" x="74.55" y="68.0"/>
@@ -215,7 +215,7 @@
       <arc head="ReviewerSelection" kind="OUTPUT" mult-k="0.8366210937500002" tail="suggestNewReviewer">
         <point x="50.0" y="29.0"/>
       </arc>
-      <arc head="Rejected" kind="OUTPUT" tail="doNotRebutt"/>
+      <arc head="Rejected" kind="OUTPUT" tail="doNotRebut"/>
       <arc head="deanonymize" kind="INPUT" tail="readyForFinalization"/>
       <arc head="Deanonymized" kind="OUTPUT" tail="deanonymize"/>
       <arc head="generateDOI" kind="INPUT" tail="AssembledPDF"/>
@@ -224,7 +224,7 @@
       <arc head="assemblePDF" kind="INPUT" tail="Deanonymized"/>
       <arc head="rejectionNotification" kind="INPUT" tail="OutcomeCalculated"/>
       <arc head="PaperRejected" kind="OUTPUT" tail="rejectionNotification"/>
-      <arc head="doNotRebutt" kind="INPUT" tail="PaperRejected"/>
+      <arc head="doNotRebut" kind="INPUT" tail="PaperRejected"/>
       <arc head="rebutt" kind="INPUT" tail="PaperRejected"/>
       <arc head="anonymize" kind="INPUT" tail="Submission"/>
       <arc head="anonymizedSubmission" kind="OUTPUT" tail="anonymize"/>
