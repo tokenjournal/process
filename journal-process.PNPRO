@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="Journal Process" version="121">
-  <gspn name="Vanilla" view-rates="false" zoom="75">
+  <gspn name="Vanilla" view-rates="false">
     <nodes>
       <place label-y="-2.0" marking="1" name="Submission" x="6.0" y="21.0"/>
       <place label-x="5.5" label-y="0.0" name="ReceivedByReviewers" x="34.0" y="53.0"/>
@@ -165,57 +165,56 @@
   </measures>
   <gspn name="Decentralized" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="75">
     <nodes>
-      <place label-y="-2.0" marking="1" name="Submission" x="20.0" y="13.0"/>
-      <place label-x="5.5" label-y="0.0" name="ReceivedByReviewers" x="32.0" y="47.0"/>
-      <transition label-y="-2.0" name="cannotReview" nservers-x="0.5" type="EXP" x="37.55" y="42.0"/>
-      <transition label-x="3.0" label-y="0.0" name="review" nservers-x="0.5" type="EXP" x="37.55" y="52.0"/>
-      <place name="NewReviewerSelection" x="43.0" y="42.0"/>
-      <transition label-x="5.0" label-y="0.0" name="suggestNewReviewer" nservers-x="0.5" type="EXP" x="49.55" y="42.0"/>
-      <transition label-x="5.5" label-y="0.0" name="sendForCapabilityChck" nservers-x="0.5" type="EXP" x="29.55" y="33.0"/>
-      <transition label-y="2.0" name="rejectPaper" nservers-x="0.5" type="EXP" x="17.55" y="28.0"/>
-      <place label-y="-2.0" name="Rejected" x="6.0" y="16.0"/>
-      <transition label-y="2.0" name="acceptPaper" nservers-x="0.5" type="EXP" x="23.55" y="28.0"/>
-      <place label-x="5.0" label-y="-1.5" name="ReviewerSelection" x="29.0" y="28.0"/>
-      <place name="OutcomeCalculated" x="55.0" y="68.0"/>
-      <transition name="doNotRebut" nservers-x="0.5" type="EXP" x="44.55" y="16.0"/>
-      <transition name="rebutt" nservers-x="0.5" type="EXP" x="44.55" y="20.0"/>
-      <place label-y="2.0" name="readyForFinalization" x="68.0" y="68.0"/>
-      <transition label-y="-2.0" name="deanonymize" nservers-x="0.5" type="EXP" x="74.55" y="68.0"/>
-      <place label-y="2.0" name="Deanonymized" x="79.0" y="68.0"/>
-      <transition label-y="-2.0" name="assemblePDF" nservers-x="0.5" type="EXP" x="84.55" y="68.0"/>
-      <place label-y="2.0" name="AssembledPDF" x="89.0" y="68.0"/>
-      <place label-y="2.0" name="Publication" x="100.0" y="68.0"/>
-      <transition label-y="-2.0" name="generateDOI" nservers-x="0.5" type="EXP" x="94.55" y="68.0"/>
-      <text-box bold="true" border-color="#000000" fill-color="none" height="16.5" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.5" x="13.5" y="7.75">Author</text-box>
-      <text-box bold="true" border-color="#000000" fill-color="none" height="14.0" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.0" x="38.0" y="59.0">Robotz</text-box>
-      <text-box bold="true" border-color="#000000" fill-color="none" height="11.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="34.625" x="27.875" y="25.5">Editor</text-box>
-      <text-box bold="true" border-color="#000000" fill-color="none" height="19.5" name="__textBox3" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="38.0" x="13.5" y="37.5">Reviewer</text-box>
-      <place label-y="2.0" name="PaperRejected" x="64.0" y="16.0"/>
-      <transition label-x="-5.0" label-y="0.0" name="rejectionNotification" nservers-x="0.5" type="EXP" x="64.55" y="60.0"/>
-      <text-box bold="true" border-color="#000000" fill-color="none" height="11.5" name="__textBox4" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="13.0" x="14.0" y="25.0">Gatekeepers</text-box>
-      <transition label-x="3.0" label-y="0.0" name="anonymize" nservers-x="0.5" type="EXP" x="20.55" y="18.0"/>
-      <place label-x="6.0" label-y="0.0" name="anonymizedSubmission" x="20.0" y="21.0"/>
-      <place name="paperReviewed" x="44.0" y="52.0"/>
-      <transition name="calculateOutcome" nservers-x="0.5" type="EXP" x="44.55" y="68.0"/>
-      <transition name="superAccept" nservers-x="0.5" type="EXP" x="61.55" y="68.0"/>
-      <place name="P0" x="41.0" y="30.0"/>
-      <transition name="T0" nservers-x="0.5" type="EXP" x="35.55" y="30.0"/>
-      <transition name="T1" nservers-x="0.5" type="EXP" x="45.55" y="33.0"/>
+      <place label-y="-2.0" marking="1" name="Submission" x="26.0" y="13.0"/>
+      <place label-x="5.5" label-y="0.0" name="ReceivedByReviewers" x="38.0" y="47.0"/>
+      <transition label-y="-2.0" name="cannotReview" nservers-x="0.5" type="EXP" x="24.55" y="47.0"/>
+      <transition label-x="3.0" label-y="0.0" name="review" nservers-x="0.5" type="EXP" x="43.55" y="52.0"/>
+      <place name="NewReviewerSelection" x="25.0" y="41.0"/>
+      <transition label-x="5.0" label-y="0.0" name="suggestNewReviewer" nservers-x="0.5" type="EXP" x="30.55" y="40.0"/>
+      <transition label-x="5.5" label-y="0.0" name="sendForCapabilityChck" nservers-x="0.5" type="EXP" x="35.55" y="32.0"/>
+      <transition label-y="2.0" name="rejectPaper" nservers-x="0.5" type="EXP" x="23.55" y="28.0"/>
+      <place label-y="2.0" name="RejectedByGatekeeper" x="10.0" y="30.0"/>
+      <transition label-y="2.0" name="acceptPaper" nservers-x="0.5" type="EXP" x="29.55" y="28.0"/>
+      <place label-x="5.0" label-y="-1.5" name="ReviewerSelection" x="35.0" y="28.0"/>
+      <place name="OutcomeCalculated" x="61.0" y="68.0"/>
+      <transition name="doNotRebut" nservers-x="0.5" type="EXP" x="50.55" y="16.0"/>
+      <transition name="rebutt" nservers-x="0.5" type="EXP" x="50.55" y="20.0"/>
+      <place label-y="2.0" name="readyForFinalization" x="74.0" y="68.0"/>
+      <transition label-y="-2.0" name="deanonymize" nservers-x="0.5" type="EXP" x="80.55" y="68.0"/>
+      <place label-y="2.0" name="Deanonymized" x="85.0" y="68.0"/>
+      <transition label-y="-2.0" name="assemblePDF" nservers-x="0.5" type="EXP" x="90.55" y="68.0"/>
+      <place label-y="2.0" name="AssembledPDF" x="95.0" y="68.0"/>
+      <place label-y="2.0" name="Publication" x="106.0" y="68.0"/>
+      <transition label-y="-2.0" name="generateDOI" nservers-x="0.5" type="EXP" x="100.55" y="68.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="16.5" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.5" x="19.5" y="7.75">Author</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="14.0" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.0" x="44.0" y="59.0">Robotz</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="11.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="34.625" x="33.875" y="25.5">Editor</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="19.5" name="__textBox3" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="38.0" x="19.5" y="37.5">Reviewer</text-box>
+      <place label-y="2.0" name="PaperRejected" x="70.0" y="16.0"/>
+      <transition label-x="-5.0" label-y="0.0" name="rejectionNotification" nservers-x="0.5" type="EXP" x="70.55" y="60.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="11.5" name="__textBox4" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="13.0" x="20.0" y="25.0">Gatekeepers</text-box>
+      <transition label-x="3.0" label-y="0.0" name="anonymize" nservers-x="0.5" type="EXP" x="26.55" y="18.0"/>
+      <place label-x="6.0" label-y="0.0" name="anonymizedSubmission" x="26.0" y="21.0"/>
+      <place name="paperReviewed" x="50.0" y="52.0"/>
+      <transition name="calculateOutcome" nservers-x="0.5" type="EXP" x="50.55" y="68.0"/>
+      <transition name="superAccept" nservers-x="0.5" type="EXP" x="67.55" y="68.0"/>
+      <place name="P0" x="48.0" y="30.0"/>
+      <transition name="T0" nservers-x="0.5" type="EXP" x="41.55" y="30.0"/>
+      <transition name="T1" nservers-x="0.5" type="EXP" x="57.55" y="30.0"/>
+      <place label-y="-2.0" name="RejectNoRebutal" x="42.0" y="16.0"/>
+      <place label-y="2.0" name="RejectedByEditor" x="63.0" y="30.0"/>
     </nodes>
     <edges>
       <arc head="review" kind="INPUT" tail="ReceivedByReviewers"/>
       <arc head="cannotReview" kind="INPUT" tail="ReceivedByReviewers"/>
       <arc head="NewReviewerSelection" kind="OUTPUT" tail="cannotReview"/>
       <arc head="suggestNewReviewer" kind="INPUT" tail="NewReviewerSelection"/>
-      <arc head="Rejected" kind="OUTPUT" mult-k="1.3622070312499996" tail="rejectPaper">
-        <point x="7.0" y="29.0"/>
+      <arc head="RejectedByGatekeeper" kind="OUTPUT" mult-k="1.3622070312499996" tail="rejectPaper">
+        <point x="13.0" y="29.0"/>
       </arc>
       <arc head="ReviewerSelection" kind="OUTPUT" mult="3" tail="acceptPaper"/>
       <arc head="sendForCapabilityChck" kind="INPUT" tail="ReviewerSelection"/>
-      <arc head="ReviewerSelection" kind="OUTPUT" mult-k="0.8366210937500002" tail="suggestNewReviewer">
-        <point x="50.0" y="29.0"/>
-      </arc>
-      <arc head="Rejected" kind="OUTPUT" tail="doNotRebut"/>
+      <arc head="RejectNoRebutal" kind="OUTPUT" tail="doNotRebut"/>
       <arc head="deanonymize" kind="INPUT" tail="readyForFinalization"/>
       <arc head="Deanonymized" kind="OUTPUT" tail="deanonymize"/>
       <arc head="generateDOI" kind="INPUT" tail="AssembledPDF"/>
@@ -239,10 +238,152 @@
       <arc head="T0" kind="INPUT" tail="P0"/>
       <arc head="ReviewerSelection" kind="OUTPUT" mult="3" tail="T0"/>
       <arc head="T1" kind="INPUT" tail="P0"/>
-      <arc head="Rejected" kind="OUTPUT" tail="T1">
-        <point x="4.0" y="34.0"/>
-      </arc>
       <arc head="readyForFinalization" kind="OUTPUT" tail="superAccept"/>
+      <arc head="RejectedByEditor" kind="OUTPUT" tail="T1"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" tail="suggestNewReviewer"/>
+    </edges>
+  </gspn>
+  <gspn name="PT" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="125">
+    <nodes>
+      <place label-x="5.5" label-y="0.0" name="ReceivedByReviewers" x="54.0" y="74.0"/>
+      <transition label-y="-2.0" name="cannotReview" nservers-x="0.5" type="EXP" x="40.55" y="74.0"/>
+      <transition label-x="3.0" label-y="0.0" name="review" nservers-x="0.5" type="EXP" x="59.55" y="79.0"/>
+      <place name="NewReviewerSelection" x="41.0" y="68.0"/>
+      <transition label-x="5.0" label-y="0.0" name="suggestNewReviewer" nservers-x="0.5" type="EXP" x="46.55" y="67.0"/>
+      <transition label-x="5.5" label-y="0.0" name="sendForCapabilityChck" nservers-x="0.5" type="EXP" x="51.55" y="59.0"/>
+      <transition label-y="2.0" name="acceptPaper" nservers-x="0.5" type="EXP" x="45.55" y="55.0"/>
+      <place label-x="5.0" label-y="-1.5" name="ReviewerSelection" x="51.0" y="55.0"/>
+      <place name="OutcomeCalculated" x="77.0" y="95.0"/>
+      <transition name="doNotRebut" nservers-x="0.5" type="EXP" x="66.55" y="43.0"/>
+      <transition name="rebutt" nservers-x="0.5" type="EXP" x="66.55" y="47.0"/>
+      <place label-y="2.0" name="readyForFinalization" x="90.0" y="95.0"/>
+      <transition label-y="-2.0" name="deanonymize" nservers-x="0.5" type="EXP" x="96.55" y="95.0"/>
+      <place label-y="2.0" name="Deanonymized" x="101.0" y="95.0"/>
+      <transition label-y="-2.0" name="assemblePDF" nservers-x="0.5" type="EXP" x="106.55" y="95.0"/>
+      <place label-y="2.0" name="AssembledPDF" x="111.0" y="95.0"/>
+      <place label-y="2.0" name="Publication" x="122.0" y="95.0"/>
+      <transition label-y="-2.0" name="generateDOI" nservers-x="0.5" type="EXP" x="116.55" y="95.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="16.5" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.5" x="98.75" y="40.75">Author</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="14.0" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="68.0" x="60.0" y="86.0">Robotz</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="11.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="34.625" x="96.6875" y="60.5">Editor</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="19.5" name="__textBox3" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="38.0" x="114.0" y="67.25">Reviewer</text-box>
+      <place label-y="2.0" name="PaperRejected" x="86.0" y="43.0"/>
+      <transition label-x="-5.0" label-y="0.0" name="rejectionNotification" nservers-x="0.5" type="EXP" x="86.55" y="87.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="11.5" name="__textBox4" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="13.0" x="116.5" y="50.25">Gatekeepers</text-box>
+      <place name="paperReviewed" x="66.0" y="79.0"/>
+      <transition name="calculateOutcome" nservers-x="0.5" type="EXP" x="66.55" y="95.0"/>
+      <transition name="superAccept" nservers-x="0.5" type="EXP" x="83.55" y="95.0"/>
+      <place name="P0" x="64.0" y="57.0"/>
+      <transition name="T0" nservers-x="0.5" type="EXP" x="57.55" y="57.0"/>
+      <transition name="T1" nservers-x="0.5" type="EXP" x="73.55" y="57.0"/>
+      <place label-y="-2.0" name="RejectNoRebutal" x="58.0" y="43.0"/>
+      <place label-y="2.0" name="RejectedByEditor" x="79.0" y="57.0"/>
+      <place marking="1" name="New" x="5.0" y="10.0"/>
+      <place name="DeskRejection" x="15.0" y="14.0"/>
+      <transition label-y="-2.0" name="approved" nservers-x="0.5" type="EXP" x="11.55" y="7.0"/>
+      <transition label-y="2.5" name="rejected" nservers-x="0.5" type="EXP" x="9.55" y="14.0"/>
+      <place label-y="2.5" name="Open" x="17.0" y="7.0"/>
+      <place name="Locked" x="45.0" y="7.0"/>
+      <place label-x="1.5" label-y="2.0" name="Flagged" x="31.0" y="7.0"/>
+      <transition label-y="-2.0" name="flagged" nservers-x="0.5" type="EXP" x="25.55" y="5.0"/>
+      <transition name="lock" nservers-x="0.5" type="EXP" x="38.55" y="7.0"/>
+      <transition label-y="2.0" name="unflag" nservers-x="0.5" type="EXP" x="24.55" y="9.0"/>
+      <place label-x="-3.5" label-y="0.0" marking="1" name="Consider" x="11.0" y="32.0"/>
+      <transition label-y="-2.0" name="violatesCodeOfConduct" nservers-x="0.5" type="EXP" x="19.55" y="27.0"/>
+      <transition label-y="2.0" name="looksGoodToMe" nservers-x="0.5" type="EXP" x="20.55" y="37.0"/>
+      <place label-x="-2.5" label-y="0.0" marking="1" name="Fresh" x="66.0" y="6.0"/>
+      <transition label-x="-4.0" label-y="0.0" name="promoteRookie" nservers-x="0.5" type="EXP" x="66.55" y="11.0"/>
+      <transition label-x="-4.5" label-y="0.0" name="promoteReviewer" nservers-x="0.5" type="EXP" x="66.55" y="21.0"/>
+      <place label-x="-3.0" label-y="0.0" name="Rookie" x="66.0" y="16.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="2.0" name="__textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="13.0" x="1.5" y="2.0">Paper State Machine</text-box>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="1.375" name="copy___textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="10.1875" x="61.90625" y="3.3125">User State Machine</text-box>
+      <place label-x="-3.0" label-y="0.0" name="Reviewer" x="66.0" y="26.0"/>
+      <transition label-x="4.5" label-y="0.0" name="demoteReviewer" nservers-x="0.5" type="EXP" x="71.55" y="21.0"/>
+      <place label-x="3.0" label-y="0.0" name="Banned" x="74.0" y="14.0"/>
+      <transition name="ban" nservers-x="0.5" type="EXP" x="74.55" y="9.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="2.0" name="copy_copy___textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="14.5" x="6.75" y="22.0">Desk Reject/Approve Task</text-box>
+      <place label-x="-3.0" label-y="0.0" name="Admin" x="66.0" y="35.0"/>
+      <transition name="T2" nservers-x="0.5" type="EXP" x="66.55" y="31.0"/>
+      <transition label-y="-2.0" name="violatesEditorialPolicy" nservers-x="0.5" type="EXP" x="20.55" y="32.0"/>
+      <place name="RejectVote" x="29.0" y="32.0"/>
+      <place name="ApproveVote" x="29.0" y="37.0"/>
+      <transition name="comment" nservers-x="0.5" type="EXP" x="20.55" y="3.0"/>
+      <transition name="flaggedComment" nservers-x="0.5" type="EXP" x="34.55" y="3.0"/>
+    </nodes>
+    <edges>
+      <arc head="review" kind="INPUT" tail="ReceivedByReviewers"/>
+      <arc head="cannotReview" kind="INPUT" tail="ReceivedByReviewers"/>
+      <arc head="NewReviewerSelection" kind="OUTPUT" tail="cannotReview"/>
+      <arc head="suggestNewReviewer" kind="INPUT" tail="NewReviewerSelection"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" mult="3" tail="acceptPaper"/>
+      <arc head="sendForCapabilityChck" kind="INPUT" tail="ReviewerSelection"/>
+      <arc head="RejectNoRebutal" kind="OUTPUT" tail="doNotRebut"/>
+      <arc head="deanonymize" kind="INPUT" tail="readyForFinalization"/>
+      <arc head="Deanonymized" kind="OUTPUT" tail="deanonymize"/>
+      <arc head="generateDOI" kind="INPUT" tail="AssembledPDF"/>
+      <arc head="Publication" kind="OUTPUT" tail="generateDOI"/>
+      <arc head="AssembledPDF" kind="OUTPUT" tail="assemblePDF"/>
+      <arc head="assemblePDF" kind="INPUT" tail="Deanonymized"/>
+      <arc head="rejectionNotification" kind="INPUT" tail="OutcomeCalculated"/>
+      <arc head="PaperRejected" kind="OUTPUT" tail="rejectionNotification"/>
+      <arc head="doNotRebut" kind="INPUT" tail="PaperRejected"/>
+      <arc head="rebutt" kind="INPUT" tail="PaperRejected"/>
+      <arc head="ReceivedByReviewers" kind="OUTPUT" tail="sendForCapabilityChck"/>
+      <arc head="paperReviewed" kind="OUTPUT" tail="review"/>
+      <arc head="calculateOutcome" kind="INPUT" mult="3" tail="paperReviewed"/>
+      <arc head="OutcomeCalculated" kind="OUTPUT" tail="calculateOutcome"/>
+      <arc head="superAccept" kind="INPUT" tail="OutcomeCalculated"/>
+      <arc head="P0" kind="OUTPUT" tail="rebutt"/>
+      <arc head="T0" kind="INPUT" tail="P0"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" mult="3" tail="T0"/>
+      <arc head="T1" kind="INPUT" tail="P0"/>
+      <arc head="readyForFinalization" kind="OUTPUT" tail="superAccept"/>
+      <arc head="RejectedByEditor" kind="OUTPUT" tail="T1"/>
+      <arc head="ReviewerSelection" kind="OUTPUT" tail="suggestNewReviewer"/>
+      <arc head="rejected" kind="INPUT" tail="New"/>
+      <arc head="DeskRejection" kind="OUTPUT" tail="rejected"/>
+      <arc head="approved" kind="INPUT" tail="New"/>
+      <arc head="Open" kind="OUTPUT" tail="approved"/>
+      <arc head="flagged" kind="INPUT" tail="Open"/>
+      <arc head="Flagged" kind="OUTPUT" tail="flagged"/>
+      <arc head="lock" kind="INPUT" tail="Flagged"/>
+      <arc head="Locked" kind="OUTPUT" tail="lock"/>
+      <arc head="promoteRookie" kind="INPUT" tail="Fresh"/>
+      <arc head="Rookie" kind="OUTPUT" tail="promoteRookie"/>
+      <arc head="promoteReviewer" kind="INPUT" tail="Rookie"/>
+      <arc head="Reviewer" kind="OUTPUT" tail="promoteReviewer"/>
+      <arc head="demoteReviewer" kind="INPUT" tail="Reviewer"/>
+      <arc head="Rookie" kind="OUTPUT" tail="demoteReviewer"/>
+      <arc head="ban" kind="INPUT" tail="Fresh"/>
+      <arc head="Banned" kind="OUTPUT" tail="ban"/>
+      <arc head="T2" kind="INPUT" tail="Reviewer"/>
+      <arc head="Admin" kind="OUTPUT" tail="T2"/>
+      <arc head="violatesCodeOfConduct" kind="INPUT" mult-k="1.08388671875" tail="Consider">
+        <point x="13.0" y="28.0"/>
+      </arc>
+      <arc head="looksGoodToMe" kind="INPUT" mult-k="1.14990234375" tail="Consider">
+        <point x="13.24501953125" y="38.08056640625"/>
+      </arc>
+      <arc head="violatesEditorialPolicy" kind="INPUT" tail="Consider"/>
+      <arc head="ApproveVote" kind="OUTPUT" tail="looksGoodToMe"/>
+      <arc head="RejectVote" kind="OUTPUT" tail="violatesEditorialPolicy"/>
+      <arc head="RejectVote" kind="OUTPUT" mult-k="0.74482421875" tail="violatesCodeOfConduct">
+        <point x="28.0" y="28.0"/>
+      </arc>
+      <arc head="comment" kind="INPUT" tail="Open">
+        <point x="18.5" y="4.0"/>
+      </arc>
+      <arc head="Open" kind="OUTPUT" tail="comment">
+        <point x="21.0" y="7.0"/>
+      </arc>
+      <arc head="flaggedComment" kind="INPUT" tail="Flagged">
+        <point x="32.5" y="4.0"/>
+      </arc>
+      <arc head="Flagged" kind="OUTPUT" tail="flaggedComment">
+        <point x="35.0" y="7.0"/>
+      </arc>
+      <arc head="unflag" kind="INPUT" tail="Flagged"/>
+      <arc head="Open" kind="OUTPUT" tail="unflag"/>
     </edges>
   </gspn>
 </project>

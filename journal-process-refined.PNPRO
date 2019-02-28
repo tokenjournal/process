@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="Journal Process" version="121">
+  <gspn name="paper" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="200">
+    <nodes>
+      <place label-x="-2.5" label-y="0.0" marking="1" name="New" x="5.0" y="13.0"/>
+      <place label-y="2.0" name="Rejection" x="17.0" y="17.0"/>
+      <transition label-y="-2.0" name="approved" nservers-x="0.5" superpos-y="-3.0" superposition-tags="desk" type="EXP" x="11.55" y="10.0"/>
+      <transition label-y="2.0" name="rejected" nservers-x="0.5" superpos-y="3.5" superposition-tags="desk" type="EXP" x="9.55" y="17.0"/>
+      <place label-y="2.0" name="Open" x="17.0" y="10.0"/>
+      <place label-y="2.0" name="Locked" x="32.0" y="10.0"/>
+      <transition name="lock" nservers-x="0.5" superposition-tags="expert" type="EXP" x="25.55" y="10.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="2.0" name="__textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="13.0" x="0.5" y="1.0">Paper State Machine</text-box>
+      <transition name="comment" nservers-x="0.5" superposition-tags="rookie" type="EXP" x="20.55" y="6.0"/>
+      <transition name="reviewRating" nservers-x="0.5" type="EXP" x="15.55" y="5.0"/>
+    </nodes>
+    <edges>
+      <arc head="rejected" kind="INPUT" tail="New"/>
+      <arc head="Rejection" kind="OUTPUT" tail="rejected"/>
+      <arc head="approved" kind="INPUT" tail="New"/>
+      <arc head="Open" kind="OUTPUT" tail="approved"/>
+      <arc head="Locked" kind="OUTPUT" tail="lock"/>
+      <arc head="comment" kind="INPUT" tail="Open">
+        <point x="18.5" y="7.0"/>
+      </arc>
+      <arc head="Open" kind="OUTPUT" tail="comment">
+        <point x="21.0" y="10.0"/>
+      </arc>
+      <arc head="lock" kind="INPUT" tail="Open"/>
+      <arc head="reviewRating" kind="INPUT" tail="Open">
+        <point x="16.0" y="9.0"/>
+      </arc>
+      <arc head="Open" kind="OUTPUT" tail="reviewRating">
+        <point x="17.0" y="6.5"/>
+      </arc>
+    </edges>
+  </gspn>
+  <gspn name="desk-decision" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="200">
+    <nodes>
+      <place label-x="-3.5" label-y="0.0" marking="1" name="Consider" x="6.0" y="10.0"/>
+      <transition label-y="2.0" name="looksLegit" nservers-x="0.5" superpos-y="3.0" superposition-tags="desk" type="EXP" x="14.55" y="13.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="2.0" name="copy_copy___textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="14.5" x="0.75" y="1.0">Desk Reject/Approve Task</text-box>
+      <transition label-y="-2.0" name="violatesSomething" nservers-x="0.5" superpos-y="-3.5" superposition-tags="desk" type="EXP" x="14.55" y="8.0"/>
+      <place name="RejectVote" x="23.0" y="8.0"/>
+      <place name="ApproveVote" x="23.0" y="13.0"/>
+    </nodes>
+    <edges>
+      <arc head="violatesSomething" kind="INPUT" tail="Consider"/>
+      <arc head="ApproveVote" kind="OUTPUT" tail="looksLegit"/>
+      <arc head="RejectVote" kind="OUTPUT" tail="violatesSomething"/>
+      <arc head="looksLegit" kind="INPUT" tail="Consider"/>
+    </edges>
+  </gspn>
+  <gspn name="flag-vote" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="200">
+    <nodes>
+      <place label-x="-3.5" label-y="0.0" marking="1" name="Flagged" x="6.0" y="12.0"/>
+      <transition label-y="-2.0" name="yesFlag" nservers-x="0.5" superpos-y="-3.0" superposition-tags="admin" type="EXP" x="11.55" y="7.0"/>
+      <transition label-y="2.0" name="noFlag" nservers-x="0.5" superpos-y="3.5" superposition-tags="admin" type="EXP" x="11.55" y="17.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="2.0" name="copy_copy___textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="14.5" x="0.75" y="1.0">Flag Vote Task</text-box>
+      <place label-x="3.0" label-y="0.0" name="FlagVote" x="17.0" y="7.0"/>
+      <place label-x="3.5" label-y="0.0" name="UnflagVote" x="17.0" y="17.0"/>
+    </nodes>
+    <edges>
+      <arc head="yesFlag" kind="INPUT" tail="Flagged"/>
+      <arc head="FlagVote" kind="OUTPUT" tail="yesFlag"/>
+      <arc head="noFlag" kind="INPUT" tail="Flagged"/>
+      <arc head="UnflagVote" kind="OUTPUT" tail="noFlag"/>
+    </edges>
+  </gspn>
+  <gspn name="comment" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="200">
+    <nodes>
+      <place label-x="-4.5" label-y="0.0" marking="1" name="FreshComment" x="8.0" y="13.0"/>
+      <transition label-y="-2.0" name="upvote" nservers-x="0.5" superpos-y="-3.0" superposition-tags="expert" type="EXP" x="9.55" y="7.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="2.0" name="copy_copy___textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="14.5" x="0.75" y="1.0">Comment State Machine</text-box>
+      <transition label-y="2.0" name="downvote" nservers-x="0.5" superpos-y="3.0" superposition-tags="expert" type="EXP" x="8.55" y="19.0"/>
+      <place name="Flagged" x="18.0" y="13.0"/>
+      <transition label-y="-2.0" name="flag" nservers-x="0.5" superpos-y="-3.0" superposition-tags="expert" type="EXP" x="13.55" y="13.0"/>
+    </nodes>
+    <edges>
+      <arc head="FreshComment" kind="OUTPUT" tail="upvote">
+        <point x="11.0" y="11.5"/>
+      </arc>
+      <arc head="downvote" kind="INPUT" tail="FreshComment">
+        <point x="11.0" y="17.0"/>
+      </arc>
+      <arc head="FreshComment" kind="OUTPUT" tail="downvote">
+        <point x="7.5" y="17.0"/>
+      </arc>
+      <arc head="upvote" kind="INPUT" tail="FreshComment">
+        <point x="7.5" y="10.5"/>
+      </arc>
+      <arc head="flag" kind="INPUT" tail="FreshComment"/>
+      <arc head="Flagged" kind="OUTPUT" tail="flag"/>
+    </edges>
+  </gspn>
+  <gspn name="user" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="125">
+    <nodes>
+      <place label-x="-2.5" label-y="0.0" marking="1" name="Fresh" x="9.0" y="5.0"/>
+      <transition label-x="-4.0" label-y="0.0" name="promoteRookie" nservers-x="0.5" type="EXP" x="9.55" y="10.0"/>
+      <transition label-x="-4.5" label-y="0.0" name="promoteExpert" nservers-x="0.5" type="EXP" x="9.55" y="30.0"/>
+      <place label-x="-3.0" label-y="0.0" name="Rookie" x="9.0" y="15.0"/>
+      <text-box bold="true" border-color="#000000" fill-color="none" height="1.6875" name="copy___textBox5" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" vert-pos="0" width="10.1875" x="0.90625" y="1.0">User State Machine</text-box>
+      <place label-x="-3.0" label-y="0.0" name="Expert" x="9.0" y="35.0"/>
+      <place label-x="-3.0" label-y="0.0" name="Admin" x="9.0" y="45.0"/>
+      <transition label-x="-4.0" label-y="0.0" name="promoteAdmin" nservers-x="0.5" type="EXP" x="9.55" y="40.0"/>
+      <place label-x="-3.0" label-y="0.0" name="Desk" x="9.0" y="25.0"/>
+      <transition label-x="-4.0" label-y="0.0" name="promoteDesk" nservers-x="0.5" type="EXP" x="9.55" y="20.0"/>
+    </nodes>
+    <edges>
+      <arc head="promoteRookie" kind="INPUT" tail="Fresh"/>
+      <arc head="Rookie" kind="OUTPUT" tail="promoteRookie"/>
+      <arc head="promoteDesk" kind="INPUT" tail="Rookie"/>
+      <arc head="Expert" kind="OUTPUT" tail="promoteExpert"/>
+      <arc head="promoteAdmin" kind="INPUT" tail="Expert"/>
+      <arc head="Admin" kind="OUTPUT" tail="promoteAdmin"/>
+      <arc head="Desk" kind="OUTPUT" tail="promoteDesk"/>
+      <arc head="promoteExpert" kind="INPUT" tail="Desk"/>
+    </edges>
+  </gspn>
+</project>

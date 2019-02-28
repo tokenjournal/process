@@ -1,0 +1,27 @@
+{
+  "name": "@tokenjournal/protocol",
+  "version": "1.0.0",
+  "description": "![](journal-process.png)",
+  "main": "index.js",
+  "scripts": {
+    "build-vanilla": "stbx convert -i journal-process.PNPRO --one Vanilla > journal-vanilla.json",
+    "build-decentralized": "stbx convert -i journal-process.PNPRO --one Decentralized > journal-decentralized.json",
+    "build-wiringtx": "node mk-wiring.js > journal-wiring.json",
+    "pack-vanilla": "stbx codec -e -i journal-wiring.json --force -o journal-wiring.tx",
+    "build": "npm run build-vanilla && npm run build-decentralized && npm run build-wiringtx && npm run pack-vanilla"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statebox/journal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/statebox/journal/issues"
+  },
+  "homepage": "https://github.com/statebox/journal#readme",
+  "devDependencies": {
+    "@statebox/stbx-cli": "0.0.7"
+  }
+}
